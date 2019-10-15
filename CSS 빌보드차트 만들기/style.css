@@ -1,4 +1,4 @@
-ol, h1 {
+ol, h1, h2, p {
 	margin: 0;
 	padding: 0;
 }
@@ -24,11 +24,26 @@ body{
 	letter-spacing: 0.2em;
 	text-indent: 0.2em;
 	padding: 50px 0;
+	position: relative;
+}
+
+.title:after {
+	content: ' ';
+	background-color: bisque;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 70px;
+	bottom: 60px;
+	border-radius: 10px;
+	opacity: 0.2;
+	height: 30px;
 }
 
 .chart {
 	background-color: #aaa;
 	overflow: hidden;
+	counter-reset: rank;
 }
 
 .chart-item {
@@ -36,10 +51,11 @@ body{
 	margin: 60px;
 	height: 80px;
 	position: relative;
+	counter-increment: rank;
 }
 
 .album {
-	background-color: #999;
+	background-color: rgba(255,255,255,0.3);
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -48,8 +64,29 @@ body{
 	transition: all .5s;
 }
 
+.album:before {
+	content: counter(rank);
+	font-size: 50px;
+	padding: 5px;
+	margin: 0 10px;
+	width: 1em;
+	text-align: right;
+	font-weight: bold;
+	font-style: italic;
+	float: left;
+}
+
 .album:hover {
 	background-color: white;
 	margin: -30px;
 }
 
+.album-cover {
+	float: right;
+	height: 100%;
+}
+
+.album-contents {
+	overflow: hidden;
+	padding: 10px;
+}
