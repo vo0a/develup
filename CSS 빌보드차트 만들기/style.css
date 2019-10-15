@@ -1,0 +1,55 @@
+ol, h1 {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+body{
+	background-color: #333;
+	color: #666;
+}
+
+.wrapper{
+	width: 800px;
+	margin: 0 auto;
+}
+
+.title {
+	text-align: center;
+	color: deeppink;
+	font-size: 80px;
+	letter-spacing: 0.2em;
+	text-indent: 0.2em;
+	padding: 50px 0;
+}
+
+.chart {
+	background-color: #aaa;
+	overflow: hidden;
+}
+
+.chart-item {
+	background-color: white;
+	margin: 60px;
+	height: 80px;
+	position: relative;
+}
+
+.album {
+	background-color: #999;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	transition: all .5s;
+}
+
+.album:hover {
+	background-color: white;
+	margin: -30px;
+}
+
